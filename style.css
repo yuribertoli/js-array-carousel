@@ -12,10 +12,6 @@
     content: "";
 }
 
-.off {
-    display: none;
-}
-
 .on {
     display: block;
 }
@@ -57,6 +53,13 @@
     position: relative;
 }
 
+.main-picture {
+    display: none;
+}
+
+.main-picture.on {
+    display: block;
+}
 /* Regole immagini */
 .main-image .main-picture img, .main-picture {
     width: 100%;
