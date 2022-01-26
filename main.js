@@ -46,6 +46,23 @@ immagineCorrente.innerHTML = immagini;
 //Indico una variabile di partenza
 let momento = 0;
 
-//Inserisco nella variabile la classe on
+//Inserisco nella variabile corrente la classe on
 let immagineAttiva = document.getElementsByClassName("main-picture");
-immagineAttiva[0].classList.add("on");
+let overlay = document.getElementsByClassName("overlay");
+
+immagineAttiva[momento].classList.add("on");
+overlay[momento].classList.add("on");
+
+//Cambio momento in base al click 
+const arrowUp = document.getElementById("arrow-up");
+
+arrowUp.addEventListener("click",
+
+    function() {
+
+        immagineAttiva[momento].classList.remove("on");
+        immagineAttiva[momento + 1].classList.add("on");
+
+    }
+
+)
