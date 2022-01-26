@@ -1,0 +1,122 @@
+/* Regole generali */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+.clearfix::after {
+    clear: both;
+    display: table;
+    content: "";
+}
+
+.off {
+    display: none;
+}
+
+.on {
+    display: block;
+}
+/* Regole containers */
+.container {
+    height: 100vh;
+    position: relative;
+}
+
+.central-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 80%;
+}
+
+.main-image {
+    width: 80%;
+    height: 100%;
+    float: left;
+    object-fit: cover;
+    position: relative;
+}
+
+.thumbnails {
+    width: 20%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pictures {
+    width: 100%;
+    height: calc(100% / 5);
+    position: relative;
+}
+
+/* Regole immagini */
+.main-image .main-picture img, .main-picture {
+    width: 100%;
+    height: 100%;
+}
+
+.pictures img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay.on {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+/* Regole testo */
+.text {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+    text-align: right;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+/* Regole frecce */
+.arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrows i {
+    display: block;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+
+
