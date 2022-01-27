@@ -19,6 +19,11 @@ body {
 .on {
     display: block;
 }
+
+h2, p {
+    text-shadow: 2px 2px 2px black;;
+}
+
 /* Regole containers */
 .container {
     height: 100vh;
