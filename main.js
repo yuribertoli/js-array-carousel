@@ -53,10 +53,82 @@ let overlay = document.getElementsByClassName("overlay");
 immagineAttiva[momento].classList.add("on");
 overlay[momento].classList.add("on");
 
-//Definisco la variabile click settandola a zero
+//Cambio momento in base al click 
+let arrowDown = document.getElementById("arrow-down");
+
+arrowDown.addEventListener("click",
+
+function () {
+
+    if (momento < items.length - 1) {
+
+        immagineAttiva[momento].classList.remove('on');
+        overlay[momento].classList.remove('on');
+
+        console.log('Ero nella slide numero:' + momento);
+
+        momento++; //vado alla slide seguente
+
+        console.log('Mi sposto nella slide numero:' + momento);
+
+        immagineAttiva[momento].classList.add('on');
+        overlay[momento].classList.add('on');
+
+    } else {
+
+        immagineAttiva[momento].classList.remove('on');
+        overlay[momento].classList.remove('on');
+
+        momento = 0; //vai alla prima slide!
+
+        immagineAttiva[momento].classList.add('on');
+        overlay[momento].classList.add('on');
+    }
+
+}
+
+);
+
+
+
+let arrowUp = document.getElementById("arrow-up");
+
+arrowUp.addEventListener('click', 
+function() {
+
+    if (momento > 0) {
+        immagineAttiva[momento].classList.remove('on');
+        overlay[momento].classList.remove('on');
+
+        console.log('Ero nella slide numero:' + momento);
+
+        momento--; //vado alla slide precedente
+
+        console.log('Mi sposto nella slide numero:' + momento);
+
+        immagineAttiva[momento].classList.add('on');
+        overlay[momento].classList.add('on');
+
+    } else {
+
+        immagineAttiva[momento].classList.remove('on');
+        overlay[momento].classList.remove('on');
+        
+        momento = immagineAttiva.length - 1;
+
+        immagineAttiva[momento].classList.add('on');
+        overlay[momento].classList.add('on');
+
+    }
+}
+);
+
+
+//Alternativa codice click
+
+/* //Definisco la variabile click per l'addEventListener
 let click = 0;
 
-//Cambio momento in base al click 
 document.getElementById("arrow-down").addEventListener("click",
 
     function () {
@@ -113,5 +185,5 @@ document.getElementById("arrow-up").addEventListener("click",
 
     }
 
-); 
+);  */
 
