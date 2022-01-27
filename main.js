@@ -23,6 +23,7 @@ const text = [
 ]
 
 let immagini = "";
+let thumbnails = "";
 
 //Per ogni indice aggiungo il relativo contenuto
 for (let i=0; i<items.length; i++) {
@@ -37,11 +38,19 @@ for (let i=0; i<items.length; i++) {
 
                 </div>`;
 
+    thumbnails += `<div class="pictures">
+                        <img src="${items[i]}">
+                        <div class="overlay"></div>
+                    </div>`;
+
 }
 
-//Inserisco i div creati in precendenza nel container
+//Inserisco i div creati in precendenza nel for
 let immagineCorrente = document.querySelector(".main-image");
 immagineCorrente.innerHTML = immagini;
+
+let diapositivaCorrente = document.querySelector(".thumbnails");
+diapositivaCorrente.innerHTML = thumbnails;
 
 //Indico una variabile di partenza
 let momento = 0;
@@ -65,11 +74,7 @@ function () {
         immagineAttiva[momento].classList.remove('on');
         overlay[momento].classList.remove('on');
 
-        console.log('Ero nella slide numero:' + momento);
-
         momento++; //vado alla slide seguente
-
-        console.log('Mi sposto nella slide numero:' + momento);
 
         immagineAttiva[momento].classList.add('on');
         overlay[momento].classList.add('on');
@@ -79,7 +84,7 @@ function () {
         immagineAttiva[momento].classList.remove('on');
         overlay[momento].classList.remove('on');
 
-        momento = 0; //vai alla prima slide!
+        momento = 0; //vai alla prima slide
 
         immagineAttiva[momento].classList.add('on');
         overlay[momento].classList.add('on');
@@ -97,14 +102,11 @@ arrowUp.addEventListener('click',
 function() {
 
     if (momento > 0) {
+
         immagineAttiva[momento].classList.remove('on');
         overlay[momento].classList.remove('on');
 
-        console.log('Ero nella slide numero:' + momento);
-
         momento--; //vado alla slide precedente
-
-        console.log('Mi sposto nella slide numero:' + momento);
 
         immagineAttiva[momento].classList.add('on');
         overlay[momento].classList.add('on');

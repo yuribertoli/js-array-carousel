@@ -44,7 +44,6 @@
     float: left;
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
 .pictures {
@@ -110,7 +109,7 @@ h2 {
     z-index: 3;
     top: 10px;
     bottom: 10px;
-    left: 50%;
+    left: 90%;
     transform: translateX(-50%);
 }
 
